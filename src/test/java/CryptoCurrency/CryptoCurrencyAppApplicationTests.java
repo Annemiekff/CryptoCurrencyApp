@@ -104,4 +104,9 @@ class CryptoCurrencyAppApplicationTests {
 
 		currencyController.putCurrency(btc, btcUpdate.getTicker());
 	}
+
+	@Test
+	public void checkingDatabaseFilled(){
+		assertThat(currencyService.getAllCurrencies(0, 10, "ticker").size() >= 4);
+	}
 }

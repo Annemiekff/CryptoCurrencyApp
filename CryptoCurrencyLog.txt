@@ -673,3 +673,36 @@ Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No q
 2020-06-23 17:57:48.366  INFO 6024 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
 2020-06-23 17:57:48.367  INFO 6024 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2020-06-23 17:57:48.377  INFO 6024 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-06-23 18:05:19.163  INFO 1596 --- [main] C.CryptoCurrencyAppApplicationTests      : Starting CryptoCurrencyAppApplicationTests on DESKTOP-2L5AHML with PID 1596 (started by annem in D:\annemiek\Documents\sollicitatie\PharmaPartners\versie 2\CryptoCurrencyApp)
+2020-06-23 18:05:19.165  INFO 1596 --- [main] C.CryptoCurrencyAppApplicationTests      : No active profile set, falling back to default profiles: default
+2020-06-23 18:05:20.149  INFO 1596 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-06-23 18:05:20.211  INFO 1596 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 53ms. Found 1 JPA repository interfaces.
+2020-06-23 18:05:21.080  INFO 1596 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-23 18:05:21.092  INFO 1596 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-06-23 18:05:21.277  INFO 1596 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-06-23 18:05:21.359  INFO 1596 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-06-23 18:05:21.423  INFO 1596 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.17.Final
+2020-06-23 18:05:21.602  INFO 1596 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-06-23 18:05:21.630  WARN 1596 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-06-23 18:05:21.766  INFO 1596 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2020-06-23 18:05:22.320  INFO 1596 --- [main] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2020-06-23 18:05:22.598  INFO 1596 --- [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-06-23 18:05:22.608  INFO 1596 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-06-23 18:05:22.829  INFO 1596 --- [main] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2020-06-23 18:05:22.840  INFO 1596 --- [main] C.CryptoCurrencyAppApplicationTests      : Started CryptoCurrencyAppApplicationTests in 4.206 seconds (JVM running for 5.629)
+2020-06-23 18:05:22.906  INFO 1596 --- [main] CryptoCurrency.model.LoadDatabase        : Preloading CryptoCurrency.model.Currency@84f51d9
+2020-06-23 18:05:22.908  INFO 1596 --- [main] CryptoCurrency.model.LoadDatabase        : Preloading CryptoCurrency.model.Currency@4b508371
+2020-06-23 18:05:22.910  INFO 1596 --- [main] CryptoCurrency.model.LoadDatabase        : Preloading CryptoCurrency.model.Currency@2e1add6f
+2020-06-23 18:05:22.912  INFO 1596 --- [main] CryptoCurrency.model.LoadDatabase        : Preloading CryptoCurrency.model.Currency@74707df8
+2020-06-23 18:05:23.047  INFO 1596 --- [main] C.logging.LoggingController              : Deleted currency with tickerBTC
+2020-06-23 18:05:23.276  INFO 1596 --- [main] C.logging.LoggingController              : Adding new Currency with ticker BTd, name Bitcoined, number of coins 16770000 and market value 189580000000
+2020-06-23 18:05:23.322  INFO 1596 --- [main] C.logging.LoggingController              : Request for all currencies starting page 0, page size 10 & sorted by ticker
+2020-06-23 18:05:23.337  INFO 1596 --- [main] C.logging.LoggingController              : updated currency ticker BTC with name Bitcoinz, number of coins 16770000 and market cap 189580000000
+2020-06-23 18:05:23.342  INFO 1596 --- [main] C.logging.LoggingController              : Request for currency with ticker BTC
+2020-06-23 18:05:23.344  INFO 1596 --- [main] C.logging.LoggingController              : updated currency ticker BTC with name Bitcoin, number of coins 16770000 and market cap 189580000000
+2020-06-23 18:05:23.363  INFO 1596 --- [main] C.logging.LoggingController              : Request for currency with ticker BTC
+2020-06-23 18:05:23.378  INFO 1596 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-06-23 18:05:23.379  INFO 1596 --- [SpringContextShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2020-06-23 18:05:23.384  INFO 1596 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-06-23 18:05:23.384  INFO 1596 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-06-23 18:05:23.387  INFO 1596 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
