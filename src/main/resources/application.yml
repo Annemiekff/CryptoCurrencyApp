@@ -1,0 +1,4 @@
+server:
+  port: 9000
+  #sets the port to 9000, so the frontend can connect to the usual 8080 and
+  #can request access to the backend by setting the SERVER_URL to localhost:9000.
