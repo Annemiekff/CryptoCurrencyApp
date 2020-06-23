@@ -37,7 +37,7 @@ public class CurrencyController {
      */
     //Root
     @GetMapping("/api/currencies")
-    public ResponseEntity<List<Currency>> all(
+    public ResponseEntity<List<Currency>> getAllCurrencies(
             @RequestParam(defaultValue = "0") Integer pageNo,
             @RequestParam(defaultValue = "10") Integer pageSize,
             @RequestParam(defaultValue = "ticker") String sortBy)
@@ -48,7 +48,7 @@ public class CurrencyController {
     }
 
     @PostMapping("/api/currencies")
-    public Currency newCurrency(@RequestBody Currency newCurrency) {
+    public Currency postCurrency(@RequestBody Currency newCurrency) {
         logger.info("Adding new Currency with ticker {}, name {}, number of coins {} and market value {}",
                 newCurrency.getTicker(), newCurrency.getName(),
                 newCurrency.getNumber_of_coins(), newCurrency.getMarket_cap());
@@ -58,7 +58,7 @@ public class CurrencyController {
 
     //Single item
     @GetMapping("/api/currencies/{ticker}")
-    public Currency one(@PathVariable String ticker) {
+    public Currency getOneCurrency(@PathVariable String ticker) {
         logger.info("Request for currency with ticker {}", ticker);
 
         return repository.findById(ticker.toUpperCase())
@@ -67,7 +67,7 @@ public class CurrencyController {
     /** CurrencyNotFoundException is an exception used to indicate when a currency is looked up but not found */
 
     @PutMapping("/api/currencies/{ticker}")
-    public Currency replaceCurrency(@RequestBody Currency newCurrency, @PathVariable String ticker){
+    public Currency putCurrency(@RequestBody Currency newCurrency, @PathVariable String ticker){
 
         return repository.findById(ticker)
                 .map(currency -> {

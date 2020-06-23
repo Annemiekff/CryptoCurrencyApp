@@ -86,9 +86,9 @@ public class Currency {
     }
 
     /** a constructor without parameters and one with 4 parameters */
-    Currency(){}
+    public Currency(){}
 
-    Currency(String ticker, String name, long number_of_coins, long market_cap){
+    public Currency(String ticker, String name, long number_of_coins, long market_cap){
         this.ticker = ticker;
         this.name = name;
         this.number_of_coins = number_of_coins;
