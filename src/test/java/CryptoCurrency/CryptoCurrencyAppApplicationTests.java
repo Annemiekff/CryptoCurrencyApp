@@ -7,11 +7,7 @@ import CryptoCurrency.model.CurrencyRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.AutoConfigureTestEntityManager;
-import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.http.ResponseEntity;
-
-import java.util.Iterator;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -107,6 +103,8 @@ class CryptoCurrencyAppApplicationTests {
 
 	@Test
 	public void checkingDatabaseFilled(){
-		assertThat(currencyService.getAllCurrencies(0, 10, "ticker").size() >= 4);
+		int databaseSize = currencyService.getAllCurrencies(0, 10, "ticker").size();
+		assertThat(databaseSize >= 4);
+		assertThat(databaseSize <= 5);
 	}
 }
