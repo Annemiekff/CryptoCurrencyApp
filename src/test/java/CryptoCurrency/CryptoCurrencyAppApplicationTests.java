@@ -71,7 +71,9 @@ class CryptoCurrencyAppApplicationTests {
 		currencyRepository.save(btc);
 	}
 
-	/** Testing if we can post a new currency */
+	/** Testing if we can post a new currency.
+	 * Deleting the currency at the end so it won't interfere with other tests
+	 * */
 	@Test
 	public void postCurrency(){
 		Currency btd = new Currency("BTd", "Bitcoined", 16770000L, 189580000000L);
@@ -81,8 +83,11 @@ class CryptoCurrencyAppApplicationTests {
 
 		//then
 		assertThat(currencyRepository.existsById(btd.getTicker()));
+		currencyController.deleteCurrency(btd.getTicker());
 	}
 
+	/** Testing if we can update a currency
+	 * Afterwards returning it to the original so it doesn't interfere with other tests*/
 	@Test
 	public void putCurrency(){
 		Currency btcUpdate = new Currency("BTC", "Bitcoinz", 16770000L, 189580000000L);
@@ -101,10 +106,10 @@ class CryptoCurrencyAppApplicationTests {
 		currencyController.putCurrency(btc, btcUpdate.getTicker());
 	}
 
+	/** Testing to see if the database is pre-filled with 4 currencies */
 	@Test
 	public void checkingDatabaseFilled(){
 		int databaseSize = currencyService.getAllCurrencies(0, 10, "ticker").size();
-		assertThat(databaseSize >= 4);
-		assertThat(databaseSize <= 5);
+		assertThat(databaseSize == 4);
 	}
 }

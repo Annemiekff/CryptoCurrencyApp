@@ -17,6 +17,7 @@ public class CurrencyService {
     @Autowired
     CurrencyRepository repository;
 
+    /** A helperClass to make the results able to return paged and sorted results */
     public List<Currency> getAllCurrencies(Integer pageNo, Integer pageSize, String sortBy)
     {
         Pageable paging = PageRequest.of(pageNo, pageSize, Sort.by(sortBy));
@@ -26,7 +27,7 @@ public class CurrencyService {
         if(pagedResult.hasContent()) {
             return pagedResult.getContent();
         } else {
-            return new ArrayList<Currency>();
+            return new ArrayList<>();
         }
     }
 }

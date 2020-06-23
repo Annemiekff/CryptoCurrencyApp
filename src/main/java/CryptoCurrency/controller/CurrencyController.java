@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-/** @RestController indicates that the data returned by each method will be written straight into the response body instead of rendering a template.
+/** \@RestController indicates that the data returned by each method will be written straight into the response body instead of rendering a template.
  */
 
 @RestController
@@ -24,6 +24,7 @@ public class CurrencyController {
 
     @Autowired
     private CurrencyService service;
+
     private final CurrencyRepository repository;
     /**
      An EmployeeRepository is injected by constructor into the controller.
@@ -33,7 +34,8 @@ public class CurrencyController {
     }
 
     /**
-     * We have routes for each operations (@GetMapping, @PostMapping, @PutMapping and @DeleteMapping, corresponding to HTTP GET (all or one), POST, PUT, and DELETE calls)
+     * We have routes for each operations (@GetMapping, @PostMapping, @PutMapping and @DeleteMapping,
+     * corresponding to HTTP GET (all or one), POST, PUT, and DELETE calls)
      */
     //Root
     @GetMapping("/api/currencies")
@@ -64,8 +66,8 @@ public class CurrencyController {
         return repository.findById(ticker.toUpperCase())
                 .orElseThrow(() -> new CurrencyNotFoundException(ticker));
     }
-    /** CurrencyNotFoundException is an exception used to indicate when a currency is looked up but not found */
 
+    /** CurrencyNotFoundException is an exception used to indicate when a currency is looked up but not found */
     @PutMapping("/api/currencies/{ticker}")
     public Currency putCurrency(@RequestBody Currency newCurrency, @PathVariable String ticker){
 
