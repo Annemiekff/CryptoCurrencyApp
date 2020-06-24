@@ -22,4 +22,16 @@ class LoadDatabase {
             log.info("Preloading " + repository.save(new Currency("BCH", "BitcoinCash", 16670000L, 69020000000L)));
         };
     }
+
+    /** This will create 4 currencies and preload them in the database */
+    @Bean
+    CommandLineRunner initDatabase(CurrencyRepository2 repository2) {
+
+        return args -> {
+            log.info("Preloading " + repository2.save(new Currency2.CurrencyBuilder("BTC", "Bitcoin").number_of_coins(6770000L).market_cap(189580000000L).build()));
+            log.info("Preloading " + repository2.save(new Currency2.CurrencyBuilder("ETH", "Ethereum").number_of_coins(96710000L).market_cap(69280000000L).build()));
+            log.info("Preloading " + repository2.save(new Currency2.CurrencyBuilder("XRP", "Ripple").number_of_coins(38590000000L).market_cap(64750000000L).build()));
+            log.info("Preloading " + repository2.save(new Currency2.CurrencyBuilder("BCH", "BitcoinCash").number_of_coins(16670000L).market_cap(69020000000L).build()));
+        };
+    }
 }
