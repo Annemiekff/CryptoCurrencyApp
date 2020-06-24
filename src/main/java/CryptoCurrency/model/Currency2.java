@@ -15,17 +15,18 @@ public class Currency2 {
 
     @Id //Marked as primary key
     @Column (name = "Ticker", nullable = false)
-    private final String ticker;
+    private  String ticker;
 
     @Column (name = "Name", nullable = false)
-    private final String name;
+    private  String name;
 
     @Column (name = "Number_of_coins", nullable = false)
-    private final long number_of_coins;
+    private  long number_of_coins;
 
     @Column (name = "Market_cap")
-    private final long market_cap;
+    private  long market_cap;
 
+    public Currency2() {}
     private Currency2(CurrencyBuilder builder){
         this.ticker = builder.ticker;
         this.name = builder.name;

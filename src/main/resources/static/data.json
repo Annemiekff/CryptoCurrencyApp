@@ -1,0 +1,25 @@
+[{
+  "ticker": "BTC",
+  "name": "Bitcoin",
+  "number_of_coins": 16770000,
+  "market_cap": 189580000000
+},
+  {
+  "ticker": "ETH",
+  "name": "Ethereum",
+  "number_of_coins": 96710000,
+  "market_cap": 69280000000
+},
+  {
+    "ticker": "XRP",
+    "name": "Ripple",
+    "number_of_coins": 38590000000,
+    "market_cap": 64750000000
+  },
+  {
+    "ticker": "BCH",
+    "name": "BitcoinCash",
+    "number_of_coins": 16670000,
+    "market_cap": 69020000000
+  }
+]
