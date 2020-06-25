@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class LoggingController {
-    /**logs the actions to CryptoCurrencyLog.txt. */
+    /** logs the types of actions to CryptoCurrencyLog.txt. */
 
     Logger logger = LoggerFactory.getLogger(LoggingController.class);
 

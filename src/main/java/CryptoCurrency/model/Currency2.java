@@ -27,6 +27,8 @@ public class Currency2 {
     private  long market_cap;
 
     public Currency2() {}
+    /** a constructor without parameters and one with 4 parameters. I know without shouldn't be there, but for some reason I couldn't get the database preloaded without it */
+
     private Currency2(CurrencyBuilder builder){
         this.ticker = builder.ticker;
         this.name = builder.name;
@@ -64,28 +66,32 @@ public class Currency2 {
         return market_cap;
     }
 
-    /** a constructor without parameters and one with 4 parameters */
+    /** A helper class needed for the builder design. You "fill" the values of the currency here, then build it into a currency where the values are final */
     public static class CurrencyBuilder{
         private final String ticker;
         private final String name;
         private long number_of_coins;
         private long market_cap;
 
+        /** Constructor with name and ticker so every currency has at least those values */
     public CurrencyBuilder(String ticker, String name){
         this.ticker = ticker;
         this.name = name;
     }
 
+    /** with .number_of_coins you can add the number of coins to the currency you are building */
     public CurrencyBuilder number_of_coins(long number_of_coins) {
         this.number_of_coins = number_of_coins;
         return this;
     }
 
+        /** with .market_cap you can add the market cap to the currency you are building */
     public CurrencyBuilder market_cap(long market_cap) {
         this.market_cap = market_cap;
         return this;
     }
 
+    /** this actually builds the currency */
     public Currency2 build() {
         return new Currency2(this);
     }
